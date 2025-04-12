@@ -197,13 +197,11 @@
         <span>SPEED</span>
         <span onclick="doublePendulum.increaseSpeed()">+</span>
       </span>
-      <span id="share" onclick="shareConfig()">SHARE</span>
       <span id="toggle" onclick="toggleMenu()"> ☰ </span>
     </div>
   
   <script>
     const menu = document.querySelector(".menu");
-    const shareButton = document.querySelector("#share");
     const gravityButton = document.querySelector("#gravitybox");
     const animationToggleButton = document.querySelector("#pause");
     const canvas = document.querySelector("#container");
@@ -728,11 +726,6 @@
       lowerBob.style.display = show ? "block" : "none";
     }
 
-    function shareConfig() {
-      window.location.hash = btoa(JSON.stringify(doublePendulum));
-      shareButton.innerHTML = "👆 COPY LINK !!!";
-      setTimeout(() => (shareButton.innerHTML = "SHARE"), 1500);
-    }
 
     function handleHold(clickX, clickY) {
       const { x0, y0, baseRad, r0, r1 } = doublePendulum;
